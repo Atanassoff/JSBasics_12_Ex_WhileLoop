@@ -1,0 +1,25 @@
+function demo(input){
+    let n1 = Number(input[0]);
+    let n2 = Number(input[1]);
+    let left = 0; let rest = 0;
+    let sumEven = 0; let sumOdd = 0;
+    let str = "";
+    for(i = n1; i <= n2; i++){
+        left = i;
+        for(j = 0; j < 6; j++){
+            rest = left % 10;
+            left = Math.floor(left / 10);
+            if(j % 2 == 0){
+                sumEven += rest;
+            }
+            else{
+                sumOdd += rest;
+            }
+        }
+        if(sumEven == sumOdd){
+            str += `${i} `;
+        }        
+        sumEven = 0; sumOdd = 0;
+    }
+    console.log(str);
+}
