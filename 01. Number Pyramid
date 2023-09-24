@@ -1,0 +1,13 @@
+function demo(input){
+    let n = Number(input[0]);
+    let str = "";
+    let count = 0;
+    for(i = 0; i <= n; i++){
+        for(j = 0; j <= i; j++){
+            count++;
+            if(count > n){i = n; j = n; break;}
+            str += `${count} `;
+        }        
+        console.log(str); str = "";
+    }
+}
